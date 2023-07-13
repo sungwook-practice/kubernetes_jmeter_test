@@ -31,7 +31,7 @@
             <collectionProp name="Arguments.arguments"/>
           </elementProp>
           <stringProp name="HTTPSampler.domain">echo-server.default.svc</stringProp>  <!-- change here -->
-          <stringProp name="HTTPSampler.port">30950</stringProp> <!-- change here -->
+          <stringProp name="HTTPSampler.port">80</stringProp> <!-- change here -->
           <stringProp name="HTTPSampler.protocol">http</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
           <stringProp name="HTTPSampler.path">/</stringProp> <!-- change here -->
@@ -139,7 +139,7 @@
               </elementProp>
               <elementProp name="influxDBURL" elementType="Argument">
                 <stringProp name="Argument.name">influxDBURL</stringProp>
-                <stringProp name="Argument.value">http://jmeter-db-influxdb2.default.svc:30952/</stringProp> <!-- change here -->
+                <stringProp name="Argument.value">http://jmeter-db-influxdb2.default.svc:80/</stringProp> <!-- change here -->
                 <stringProp name="Argument.metadata">=</stringProp>
               </elementProp>
               <elementProp name="influxDBToken" elementType="Argument">
