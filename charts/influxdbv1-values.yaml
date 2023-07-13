@@ -1,0 +1,37 @@
+initScripts:
+  enabled: true
+  scripts:
+    init.iql: |+
+      CREATE DATABASE "telegraf" WITH DURATION 30d REPLICATION 1 NAME "rp_30d"
+
+persistence:
+  enabled: false
+
+service:
+  type: NodePort
+  nodePorts:
+    http: "30952"
+
+ingress:
+  enabled: false
+  # enabled: true
+  # className: nginx
+  # hostname: influxdb.localtest.com
+
+setDefaultUser:
+  enabled: true
+  user:
+    username: "admin"
+    password: "9aurdH2Rp4YixWb"
+
+resources: {}
+  # We usually recommend not to specify default resources and to leave this as a conscious
+  # choice for the user. This also increases chances charts run on environments with little
+  # resources, such as Minikube. If you do want to specify resources, uncomment the following
+  # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
+  # limits:
+  #  cpu: 100m
+  #  memory: 128Mi
+  # requests:
+  #  cpu: 100m
+  #  memory: 128Mi

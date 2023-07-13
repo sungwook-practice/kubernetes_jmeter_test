@@ -1,0 +1,23 @@
+persistence:
+  enabled: false
+
+service:
+  type: NodePort
+  nodePort: 30953
+
+ingress:
+  enabled: false
+  # ingressClassName: nginx
+  # hosts:
+  #   - grafana.localtest.com
+
+adminUser: admin
+adminPassword: 9aurdH2Rp4YixWb
+
+resources: {}
+#  limits:
+#    cpu: 100m
+#    memory: 128Mi
+#  requests:
+#    cpu: 100m
+#    memory: 128Mi
