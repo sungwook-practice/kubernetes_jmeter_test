@@ -1,0 +1,17 @@
+kind: Cluster
+apiVersion: kind.x-k8s.io/v1alpha4
+name: jmeter-test
+nodes:
+- role: control-plane
+  image: kindest/node:v1.20.15
+  extraPortMappings:
+  - containerPort: 30950 # echo-server
+    hostPort: 30950
+  - containerPort: 30951 # echo-server
+    hostPort: 30951
+  - containerPort: 30952 # influxdb
+    hostPort: 30952
+  - containerPort: 30953 # grafana
+    hostPort: 30953
+- role: worker
+  image: kindest/node:v1.20.15
