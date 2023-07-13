@@ -8,6 +8,6 @@ build-worker:
 	docker build -t jmeter:worker -f base.Dockerfile .
 
 clean:
-	docker rmi jmeter:base jmeter:server jmeter:worker
+	docker rmi jmeter:base jmeter:controller jmeter:worker
 
 build: build-base build-controller build-worker
