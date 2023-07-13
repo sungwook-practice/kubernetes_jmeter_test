@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jmeter-controller
+  labels:
+    jmeter_mode: controller
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      jmeter_mode: controller
+  template:
+    metadata:
+      labels:
+        jmeter_mode: controller
+    spec:
+      containers:
+      - name: jmcontroller
+        image: jmeter:controller
+        command: [ "/bin/bash", "-c", "--" ]
+        args: [ "while true; do sleep 30; echo sleep; done;" ]
+        ports:
+        - containerPort: 60000
+        resources: {}

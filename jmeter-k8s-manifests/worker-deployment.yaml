@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jmeter-workers
+  labels:
+    jmeter_mode: worker
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      jmeter_mode: worker
+  template:
+    metadata:
+      labels:
+        jmeter_mode: worker
+    spec:
+      containers:
+      - name: main
+        image: jmeter:worker
+        resources: {}
+        ports:
+        - containerPort: 1099
+        - containerPort: 50000
